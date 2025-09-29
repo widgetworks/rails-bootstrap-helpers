@@ -1,6 +1,6 @@
 require "spec_helper"
 
-describe RailsBootstrapHelpers::Helpers::FormTagHelper do
+describe RailsBootstrapHelpers::Helpers::FormTagHelper, type: :helper do
   describe "bs_button_tag" do
     it { should render_bs_button_tag("foo", :submit) }
     it { should render_bs_button_tag("bar", :reset) }

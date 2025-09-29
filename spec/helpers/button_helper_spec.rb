@@ -1,6 +1,6 @@
 require "spec_helper"
 
-describe RailsBootstrapHelpers::Helpers::ButtonHelper do
+describe RailsBootstrapHelpers::Helpers::ButtonHelper, type: :helper do
   let(:html_attributes) do
     attributes.map{ |k, v| "#{k}=\"#{v}\"" }.join(" ")
   end

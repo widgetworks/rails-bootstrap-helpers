@@ -1,6 +1,6 @@
 require "spec_helper"
 
-describe RailsBootstrapHelpers::Helpers::LabelHelper do
+describe RailsBootstrapHelpers::Helpers::LabelHelper, type: :helper do
   describe "bs_label" do
     it { should render_bs_label("foo") }
     it { should render_bs_label("foo").with_style(:success) }

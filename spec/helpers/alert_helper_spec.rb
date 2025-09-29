@@ -1,6 +1,6 @@
 require "spec_helper"
 
-describe RailsBootstrapHelpers::Helpers::AlertHelper do
+describe RailsBootstrapHelpers::Helpers::AlertHelper, type: :helper do
   describe "bs_alert" do
     it { should render_bs_alert("foo") }
 

@@ -1,3 +1,5 @@
+$VERBOSE = nil
+
 require "rubygems"
 require "spork"
 
@@ -15,8 +17,8 @@ Spork.prefork do
     config.order = "random"
     config.include Html
     
-    # 2025: explicitly enable 'should' syntax
-    config.expect_with(:rspec) { |c| c.syntax = :should }
+    # 2025: allow 'should' syntax (until we can remove it in favour of 'expect')
+    config.expect_with(:rspec) { |c| c.syntax = [:should, :expect] }
   end
 end
 

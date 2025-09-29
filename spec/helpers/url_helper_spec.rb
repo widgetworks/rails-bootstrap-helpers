@@ -1,6 +1,6 @@
 require "spec_helper"
 
-describe RailsBootstrapHelpers::Helpers::UrlHelper do
+describe RailsBootstrapHelpers::Helpers::UrlHelper, type: :helper do
   describe "action_link_to" do
     context "with url" do
       it { should render_action_link_to("foo").to("bar") }

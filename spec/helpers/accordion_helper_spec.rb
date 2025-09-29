@@ -1,6 +1,6 @@
 require "spec_helper"
 
-describe RailsBootstrapHelpers::Helpers::AccordionHelper do
+describe RailsBootstrapHelpers::Helpers::AccordionHelper, type: :helper do
   describe "accordion" do
     it "should render an accordion" do
       expected_html = <<-eos

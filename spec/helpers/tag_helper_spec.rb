@@ -1,6 +1,6 @@
 require "spec_helper"
 
-describe RailsBootstrapHelpers::Helpers::TagHelper do
+describe RailsBootstrapHelpers::Helpers::TagHelper, type: :helper do
   describe "bs_content_tag" do
     it "should render an HTML tag" do
       expected_html = <<-eos

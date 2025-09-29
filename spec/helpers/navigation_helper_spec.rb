@@ -1,6 +1,6 @@
 require "spec_helper"
 
-describe RailsBootstrapHelpers::Helpers::NavigationHelper do
+describe RailsBootstrapHelpers::Helpers::NavigationHelper, type: :helper do
   let(:foo_tab_text) { "foo" }
   let(:bar_tab_text) { "bar" }
 
