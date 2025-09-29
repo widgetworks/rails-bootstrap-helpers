@@ -14,6 +14,9 @@ Spork.prefork do
   RSpec.configure do |config|
     config.order = "random"
     config.include Html
+    
+    # 2025: explicitly enable 'should' syntax
+    config.expect_with(:rspec) { |c| c.syntax = :should }
   end
 end
 

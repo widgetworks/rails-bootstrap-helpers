@@ -76,11 +76,11 @@ RSpec::Matchers.define :render_bs_submit_tag do |text, type|
     expected == got
   end
 
-  failure_message_for_should do
+  failure_message do
     failure_message(false)
   end
 
-  failure_message_for_should_not do
+  failure_message_when_negated do
     failure_message(true)
   end
 
