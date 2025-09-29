@@ -20,7 +20,7 @@ module RailsBootstrapHelpers::Helpers::TagHelper
   #
   # @param [String] the name of the tag to render
   # @param [Hash] a hash of HTML attributes
-  def bs_content_tag (name, options = {}, &block)
+  def bs_content_tag(name, options = {}, &block)
     RailsBootstrapHelpers::Renderers::ContentTagRenderer.new(self, name, options, &block).render
   end
 end

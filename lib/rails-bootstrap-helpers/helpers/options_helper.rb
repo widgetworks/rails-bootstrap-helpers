@@ -14,7 +14,7 @@ module RailsBootstrapHelpers::Helpers::OptionsHelper
   #        the tooltip if <tt>:tooltip</tt> is present. Adds the
   #        <tt>data-placement="#{tooltip_position}"</tt> HTML attribute if not
   #        already present.
-  def bs_options (options, html_options = {})
+  def bs_options(options, html_options = {})
     options = options.reverse_merge(html_options)
 
     if tooltip = options.delete(:tooltip)
@@ -37,7 +37,7 @@ module RailsBootstrapHelpers::Helpers::OptionsHelper
   # @param options [Hash] hash of options to append the classes to
   # @param new_classes [Array<String>] the classes to append
   # @return options
-  def append_class! (options, *new_classes)
+  def append_class!(options, *new_classes)
     return options if new_classes.empty?
 
     # or symbolize_keys and have done..

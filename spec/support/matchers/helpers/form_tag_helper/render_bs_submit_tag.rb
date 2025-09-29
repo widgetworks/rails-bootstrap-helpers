@@ -3,7 +3,7 @@ RSpec::Matchers.define :render_bs_submit_tag do |text, type|
     @options ||= { }
   end
 
-  def append_style (style)
+  def append_style(style)
     " btn-#{style}"
   end
 
@@ -43,7 +43,7 @@ RSpec::Matchers.define :render_bs_submit_tag do |text, type|
     @got ||= helper.bs_submit_tag(text, options)
   end
 
-  def failure_message (is_not)
+  def failure_message(is_not)
     ex = is_not ? "expected not" : "expected"
     "#{ex}: #{expected}\n     got: #{got}"
   end

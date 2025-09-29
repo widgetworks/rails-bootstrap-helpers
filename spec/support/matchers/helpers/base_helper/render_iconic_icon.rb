@@ -40,7 +40,7 @@ RSpec::Matchers.define :render_iconic_icon do |icon|
     end
   end
 
-  def append_style (key, value)
+  def append_style(key, value)
     if value
       @style ||= ""
 
@@ -96,7 +96,7 @@ RSpec::Matchers.define :render_iconic_icon do |icon|
     @got ||= helper.iconic_icon(icon, options)
   end
 
-  def failure_message (is_not)
+  def failure_message(is_not)
     ex = is_not ? "expected not" : "expected"
     "#{ex}: #{expected}\n     got: #{got}"
   end

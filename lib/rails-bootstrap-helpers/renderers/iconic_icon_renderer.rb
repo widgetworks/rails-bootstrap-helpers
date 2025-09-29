@@ -1,6 +1,6 @@
 module RailsBootstrapHelpers::Renderers
   class IconicIconRenderer < Renderer
-    def initialize (template, icon, options)
+    def initialize(template, icon, options)
       super template
       @icon = icon
       @options = options.dup
@@ -55,7 +55,7 @@ module RailsBootstrapHelpers::Renderers
       end
     end
 
-    def append_style (key, value)
+    def append_style(key, value)
       if value
         style = options[:style].to_s
 

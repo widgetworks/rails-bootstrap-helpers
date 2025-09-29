@@ -32,7 +32,7 @@ RSpec::Matchers.define :render_inline_button_to do |url, icon|
     @got ||= helper.bs_inline_button_to(url, icon, options)
   end
 
-  def failure_message (is_not)
+  def failure_message(is_not)
     ex = is_not ? "expected not" : "expected"
     "#{ex}: #{expected}\n     got: #{got}"
   end

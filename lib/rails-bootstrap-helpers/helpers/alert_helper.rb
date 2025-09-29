@@ -12,7 +12,7 @@ module RailsBootstrapHelpers::Helpers::AlertHelper
   #
   # @options options [Boolean] :dismiss_button (false) indicates if an dismiss
   #          button should be added to the alert
-  def bs_alert (text, options = {})
+  def bs_alert(text, options = {})
     options = options.deep_dup
     cls = "alert"
     type = options.delete(:type)

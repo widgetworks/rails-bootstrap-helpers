@@ -1,6 +1,6 @@
 module RailsBootstrapHelpers::Renderers
   class RowLinkRenderer < AbstractLinkRenderer
-    def initialize (template, *args, &block)
+    def initialize(template, *args, &block)
       super template, :link, *args, &block
     end
 

@@ -15,7 +15,7 @@ module RailsBootstrapHelpers::Helpers::ButtonHelper
   #
   # @option options [Boolean] :icon_invert (false) if the color of the icon
   #         should be inverted or not
-  def bs_button_to (*args, &block)
+  def bs_button_to(*args, &block)
     RailsBootstrapHelpers::Renderers::ButtonRenderer.new(self, :link, *args, &block).render
   end
 
@@ -27,7 +27,7 @@ module RailsBootstrapHelpers::Helpers::ButtonHelper
   # @param options [Hash] a hash of options. See {#bs_button_to}
   #
   # @see #bs_button_to
-  def bs_inline_button_to (url, icon, options = {})
+  def bs_inline_button_to(url, icon, options = {})
     options = options.reverse_merge icon: icon, size: "mini"
     append_class!(options, "inline")
     RailsBootstrapHelpers::Renderers::ButtonRenderer.new(self, :link, nil, url, options).render
@@ -45,7 +45,7 @@ module RailsBootstrapHelpers::Helpers::ButtonHelper
   #         position of the popover
   #
   # @see #bs_button_to
-  def bs_popover_button (name, content_or_options = nil, options = {}, &block)
+  def bs_popover_button(name, content_or_options = nil, options = {}, &block)
     if block_given?
       bs_popover_button(name, capture(&block).gsub("\n", ""), content_or_options || {})
     else
@@ -75,7 +75,7 @@ module RailsBootstrapHelpers::Helpers::ButtonHelper
   #        through to the underlying bs_button_to method.
   #
   # @see #bs_button_to
-  def bs_collapsible_button (text, target, options = {})
+  def bs_collapsible_button(text, target, options = {})
     options = options.dup.reverse_merge :"data-toggle" => "collapse",
       :"data-target" => target
 
@@ -93,7 +93,7 @@ module RailsBootstrapHelpers::Helpers::ButtonHelper
   #         another group with the "btn-toolbar" class
   #
   # All other options are passed to the button group div.
-  def button_group (options = {}, &block)
+  def button_group(options = {}, &block)
     if toolbar = options.delete(:toolbar)
       append_class!(options, "btn-toolbar")
     else
@@ -121,7 +121,7 @@ module RailsBootstrapHelpers::Helpers::ButtonHelper
   #
   # @param block [Proc] the block should render a the dropdown menu items in the
   #        form of list items with links.
-  def bs_dropdown_button_to (text, url_or_options = nil, options = {}, &block)
+  def bs_dropdown_button_to(text, url_or_options = nil, options = {}, &block)
     RailsBootstrapHelpers::Renderers::DropdownButtonRenderer.new(self, text, url_or_options, options, &block).render
   end
 end

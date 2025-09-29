@@ -5,13 +5,13 @@ module RailsBootstrapHelpers::Helpers::UrlHelper
   # following options:
   #
   # @option options [String, Symbol] :style the style of the link
-  def action_link_to (*args, &block)
+  def action_link_to(*args, &block)
     RailsBootstrapHelpers::Renderers::ActionLinkRenderer.new(self, *args, &block).render
   end
 
   # Renders a Jasny Bootstrap row link. This method behaves just as "link_to"
   # but will render a Jasny Bootstrap row link instead of a regular link.
-  def row_link_to (*args, &block)
+  def row_link_to(*args, &block)
     RailsBootstrapHelpers::Renderers::RowLinkRenderer.new(self, *args, &block).render
   end
 end

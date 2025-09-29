@@ -3,11 +3,11 @@ module RailsBootstrapHelpers::Renderers
     abstract :render
     attr_reader :template
 
-    def initialize (template)
+    def initialize(template)
       @template = template
     end
 
-    def method_missing (*args, &block)
+    def method_missing(*args, &block)
       @template.send(*args, &block)
     end
   end

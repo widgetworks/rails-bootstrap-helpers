@@ -8,7 +8,7 @@ module RailsBootstrapHelpers::Helpers::BaseHelper
   # @param icon [String, Symbol] the kind of icon to render
   #
   # @option options [Boolean] :invert (false) if the color of the icon should be inverted
-  def icon (icon, options = {})
+  def icon(icon, options = {})
     options = options.dup
 
     icon = ERB::Util.html_escape(icon.to_s)
@@ -38,7 +38,7 @@ module RailsBootstrapHelpers::Helpers::BaseHelper
   #
   # @option options [:primary, :info, :success, :warning, :danger] :action_style
   #         renders the icon with this action link style
-  def iconic_icon (icon, options = {})
+  def iconic_icon(icon, options = {})
     RailsBootstrapHelpers::Renderers::IconicIconRenderer.new(self, icon, options).render
   end
 end

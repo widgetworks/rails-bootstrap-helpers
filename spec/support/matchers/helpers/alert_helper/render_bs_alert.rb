@@ -47,7 +47,7 @@ RSpec::Matchers.define :render_bs_alert do |text|
     @got ||= helper.bs_alert(text, options)
   end
 
-  def failure_message (is_not)
+  def failure_message(is_not)
     ex = is_not ? "expected not" : "expected"
     "#{ex}: #{expected}\n     got: #{got}"
   end

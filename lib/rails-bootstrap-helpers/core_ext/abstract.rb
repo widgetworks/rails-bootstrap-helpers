@@ -50,11 +50,11 @@ def abstract(*args)
     class_eval do
       alias __abstract_initialize__ initialize
 
-      def initialize (*params, &block)
+      def initialize(*params, &block)
         raise AbstractError.new("Cannot instantiate abstract class #{self.class.name}.")
       end
 
-      def self.inherited (subclass)
+      def self.inherited(subclass)
         subclass.send(:define_method, :initialize) do |*args|
           __abstract_initialize__ *args
         end

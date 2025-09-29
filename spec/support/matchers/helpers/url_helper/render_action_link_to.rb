@@ -3,7 +3,7 @@ RSpec::Matchers.define :render_action_link_to do |text|
     @options ||= { }
   end
 
-  def append_style (style)
+  def append_style(style)
     " act-#{style}"
   end
 
@@ -46,7 +46,7 @@ RSpec::Matchers.define :render_action_link_to do |text|
     @got ||= helper.action_link_to(text, url, options)
   end
 
-  def failure_message (is_not)
+  def failure_message(is_not)
     ex = is_not ? "expected not" : "expected"
     "#{ex}: #{expected}\n     got: #{got}"
   end

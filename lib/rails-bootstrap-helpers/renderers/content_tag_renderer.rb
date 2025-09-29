@@ -1,6 +1,6 @@
 module RailsBootstrapHelpers::Renderers
   class ContentTagRenderer < Renderer
-    def initialize (template, name, options, &block)
+    def initialize(template, name, options, &block)
       super template
 
       @name = name
@@ -27,14 +27,14 @@ module RailsBootstrapHelpers::Renderers
     attr_reader :buffer
     attr_reader :default_indentation
 
-    def content_tag_impl (name, options = {}, &block)
+    def content_tag_impl(name, options = {}, &block)
       append tag(name, options, true)
       indent { context.instance_eval(&block) }
       append "</#{name}>"
       buffer.html_safe
     end
 
-    def indent (&block)
+    def indent(&block)
       last_indentation_level = @indentation_level
       @indentation_level += default_indentation
       block.call
@@ -42,7 +42,7 @@ module RailsBootstrapHelpers::Renderers
       @indentation_level = last_indentation_level
     end
 
-    def append (string)
+    def append(string)
       unless string.nil?
         buffer << " " * @indentation_level
         buffer << string
@@ -51,15 +51,15 @@ module RailsBootstrapHelpers::Renderers
     end
 
     class Context
-      def initialize (renderer)
+      def initialize(renderer)
         @renderer = renderer
       end
 
-      def bs_content_tag (name, options = {}, &block)
+      def bs_content_tag(name, options = {}, &block)
         @renderer.send :content_tag_impl, name, options, &block
       end
 
-      def append (string)
+      def append(string)
         @renderer.send :append, string
       end
     end

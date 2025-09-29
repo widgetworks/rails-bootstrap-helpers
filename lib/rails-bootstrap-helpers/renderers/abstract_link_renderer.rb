@@ -1,6 +1,6 @@
 module RailsBootstrapHelpers::Renderers
   class AbstractLinkRenderer < Renderer
-    def initialize (template, type, *args, &block)
+    def initialize(template, type, *args, &block)
       super template
       @args = args
       @block = block
@@ -48,14 +48,14 @@ module RailsBootstrapHelpers::Renderers
     #
     # @param key [String, Symbol] the key to check for
     # @return the value of the option
-    def has_option? (key)
+    def has_option?(key)
       _has_option?(key, options, html_options)
     end
 
     # Appends the given class to the "class" HTMl attribute.
     #
     # @param cls [String, Symbol] the class to append
-    def append_class (cls)
+    def append_class(cls)
       return unless cls
 
       if c = html_options["class"]
@@ -89,7 +89,7 @@ module RailsBootstrapHelpers::Renderers
       end
     end
 
-    def _has_option? (key, options, html_options = nil)
+    def _has_option?(key, options, html_options = nil)
       result = options.is_a?(Hash) && options.key?(key) && options.delete(key)
 
       if html_options

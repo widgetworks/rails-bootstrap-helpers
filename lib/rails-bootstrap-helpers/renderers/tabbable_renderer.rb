@@ -1,6 +1,6 @@
 module RailsBootstrapHelpers::Renderers
   class TabbableRenderer < Renderer
-    def initialize (template, *args, &block)
+    def initialize(template, *args, &block)
       super template
       @args = args || []
       @block = block
@@ -19,11 +19,11 @@ module RailsBootstrapHelpers::Renderers
       after_block
     end
 
-    def add_tab (text, options)
+    def add_tab(text, options)
       @tabs << Tab.new(text, options)
     end
 
-    def add_pane (block, options)
+    def add_pane(block, options)
       @panes << Pane.new(block, options)
     end
 
@@ -114,7 +114,7 @@ module RailsBootstrapHelpers::Renderers
       end
     end
 
-    def process_tab (tab, active = false)
+    def process_tab(tab, active = false)
       @ids << id_for_tab(tab.name)
       render_tab(ids.last, tab, active)
     end
@@ -130,7 +130,7 @@ module RailsBootstrapHelpers::Renderers
       end
     end
 
-    def render_tab (id, tab, active = false)
+    def render_tab(id, tab, active = false)
       if tab.options.key?(:active)
         active = tab.options[:active]
       end
@@ -140,7 +140,7 @@ module RailsBootstrapHelpers::Renderers
       end
     end
 
-    def render_tab_pane (id, pane, active = false)
+    def render_tab_pane(id, pane, active = false)
       if pane.options.key?(:active)
         active = pane.options[:active]
       end
@@ -151,27 +151,27 @@ module RailsBootstrapHelpers::Renderers
       content_tag :div, id: "#{id}", class: cls, &pane.block
     end
 
-    def id_for_tab (name)
+    def id_for_tab(name)
       id = "tab_pane_#{@last_id}_#{name.object_id}"
       @last_id += 1
       id
     end
 
-    def class_for_direction (direction)
+    def class_for_direction(direction)
       direction = ERB::Util.html_escape(direction.to_s)
       direction == "top" ? "" : "tabs-#{direction}"
     end
 
     class TabContext
-      def initialize (renderer)
+      def initialize(renderer)
         @renderer = renderer
       end
 
-      def tab (text, options = {})
+      def tab(text, options = {})
         @renderer.add_tab(text, options)
       end
 
-      def tab_pane (options = {}, &block)
+      def tab_pane(options = {}, &block)
         @renderer.add_pane(block, options)
       end
 

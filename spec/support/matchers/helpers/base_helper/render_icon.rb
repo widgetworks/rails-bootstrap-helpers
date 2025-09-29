@@ -30,7 +30,7 @@ RSpec::Matchers.define :render_icon do |icon|
     @got ||= helper.icon(icon, invert: options[:invert], class: options[:class])
   end
 
-  def failure_message (is_not)
+  def failure_message(is_not)
     ex = is_not ? "expected not" : "expected"
     "#{ex}: #{expected}\n     got: #{got}"
   end

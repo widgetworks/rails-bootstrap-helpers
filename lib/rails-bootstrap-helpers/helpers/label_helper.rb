@@ -8,7 +8,7 @@ module RailsBootstrapHelpers::Helpers::LabelHelper
   # @param options [Hash] a hash of options. Passed straight through to the
   #        underlying "span" tag.
   # 
-  def bs_label (text, style = :default, options = {})
+  def bs_label(text, style = :default, options = {})
     normalize_style = lambda do |style|
       style = style.to_s
 

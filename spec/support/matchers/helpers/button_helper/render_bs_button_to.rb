@@ -3,7 +3,7 @@ RSpec::Matchers.define :render_bs_button_to do |text|
     @options ||= { }
   end
 
-  def append_style (style)
+  def append_style(style)
     " btn-#{style}"
   end
 
@@ -58,7 +58,7 @@ RSpec::Matchers.define :render_bs_button_to do |text|
     @got ||= helper.bs_button_to(text, url, options)
   end
 
-  def failure_message (is_not)
+  def failure_message(is_not)
     ex = is_not ? "expected not" : "expected"
     "#{ex}: #{expected}\n     got: #{got}"
   end

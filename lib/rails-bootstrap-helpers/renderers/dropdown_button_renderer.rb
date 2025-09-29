@@ -1,6 +1,6 @@
 module RailsBootstrapHelpers::Renderers
   class DropdownButtonRenderer < Renderer
-    def initialize (template, text, url_or_options = nil, options = {}, &block)
+    def initialize(template, text, url_or_options = nil, options = {}, &block)
       super template
       @text = text
       @block = block
@@ -66,7 +66,7 @@ module RailsBootstrapHelpers::Renderers
       content_tag :span, nil, class: "caret"
     end
 
-    def render_toggle_button_impl (with_text)
+    def render_toggle_button_impl(with_text)
       text = with_text ? text_with_caret : render_caret
       bs_button_tag text, nil, toggle_options
     end

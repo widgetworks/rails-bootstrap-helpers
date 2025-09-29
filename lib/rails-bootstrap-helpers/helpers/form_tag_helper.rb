@@ -14,7 +14,7 @@ module RailsBootstrapHelpers::Helpers::FormTagHelper
   # @option options [String] :icon the name of an icon to render on the button
   # @option options ["left", "right"] :icon_position ("left") the post of the icon, if present
   # @option options [Boolean] :icon_invert (left) if the color of the icon should be inverted
-  def bs_button_tag (value, type, options = {}, &block)
+  def bs_button_tag(value, type, options = {}, &block)
     options = options.merge type: type
     RailsBootstrapHelpers::Renderers::ButtonRenderer.new(self, :button, value, options, &block).render
   end
@@ -30,7 +30,7 @@ module RailsBootstrapHelpers::Helpers::FormTagHelper
   #
   # All the other options are passed straight through to the underlying
   # <tt>submit_tag</tt> method.
-  def bs_submit_tag (value, options = {})
+  def bs_submit_tag(value, options = {})
     options = options.dup
 
     if options[:class].present?

@@ -11,7 +11,7 @@ module RailsBootstrapHelpers::Helpers::NavigationHelper
   #
   # @option option [Bootstrap] :fade (false) if true, will add the "fade in"
   #         class to all tab panes. This requires the bootstrap-transition.js file.
-  def tabbable (*args, &block)
+  def tabbable(*args, &block)
     RailsBootstrapHelpers::Renderers::TabbableRenderer.new(self, *args, &block).render
   end
 end

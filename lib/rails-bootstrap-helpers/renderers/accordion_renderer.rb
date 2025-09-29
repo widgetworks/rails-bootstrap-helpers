@@ -1,6 +1,6 @@
 module RailsBootstrapHelpers::Renderers
   class AccordionRenderer < Renderer
-    def initialize (template, id, &block)
+    def initialize(template, id, &block)
       super template
       @id = id
       @block = block
@@ -32,7 +32,7 @@ module RailsBootstrapHelpers::Renderers
       end
     end
 
-    def build_group (group, count, accordion_base)
+    def build_group(group, count, accordion_base)
       base = "accordion-group"
 
       selector.base ".#{base}" do |group_base|
@@ -45,7 +45,7 @@ module RailsBootstrapHelpers::Renderers
       end
     end
 
-    def build_heading (heading, body, count, accordion_base, group_base)
+    def build_heading(heading, body, count, accordion_base, group_base)
       href = "#{group_base}:nth-child(#{count + 1}) .#{body}.collapse"
 
       content_tag :div, class: "accordion-heading" do
@@ -57,7 +57,7 @@ module RailsBootstrapHelpers::Renderers
       end
     end
     
-    def build_body (body, block)
+    def build_body(body, block)
       content_tag :div, class: body + " collapse" do
         content_tag :div, class: "accordion-inner", &block
       end
@@ -68,12 +68,12 @@ module RailsBootstrapHelpers::Renderers
 
       attr_reader :groups
 
-      def initialize (renderer)
+      def initialize(renderer)
         @renderer = renderer
         @groups = []
       end
 
-      def group (heading, &block)
+      def group(heading, &block)
         @groups << Group.new(heading, block)
       end
     end
@@ -83,7 +83,7 @@ module RailsBootstrapHelpers::Renderers
         @base = []
       end
 
-      def base (base, &block)
+      def base(base, &block)
         @base << base
         block.call @base.join(" ")
       ensure
